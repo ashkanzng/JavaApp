@@ -46,6 +46,16 @@ public class Task {
     @JoinColumn(name = "user_id")
     private User user;
 
-
-
+    @Override
+    public String toString() {
+        return "Task{" +
+                "id=" + id +
+                ", completed='" + completed + '\'' +
+                ", task_date=" + task_date +
+                ", title='" + title + '\'' +
+                ", category=" + category +
+                ", priority=" + priority +
+                ", user=" + user +
+                '}';
+    }
 }

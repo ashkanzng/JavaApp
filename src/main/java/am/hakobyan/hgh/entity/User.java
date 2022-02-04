@@ -44,4 +44,16 @@ public class User {
             @AttributeOverride(name="region", column = @Column(name = "office_region"))
     })
     private Address officeAddress;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", uesrEmail='" + uesrEmail + '\'' +
+                ", userPassword='" + userPassword + '\'' +
+                ", homeAddress=" + homeAddress +
+                ", officeAddress=" + officeAddress +
+                '}';
+    }
 }

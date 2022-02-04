@@ -27,4 +27,12 @@ public class Category {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Override
+    public String toString() {
+        return "Category{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", user=" + user +
+                '}';
+    }
 }
