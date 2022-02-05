@@ -1,13 +1,11 @@
 package am.hakobyan.hgh.controller;
 
+import am.hakobyan.hgh.dto.UserDto;
 import am.hakobyan.hgh.entity.User;
 import am.hakobyan.hgh.mapper.UserMapper;
 import am.hakobyan.hgh.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,5 +35,10 @@ public class UserController {
         return userService.UserByName(userName);
     }
 
+    @PutMapping("/all")
+    public void addNewUser(@RequestBody UserDto userDto) {
+        userService.addNewUser(userMapper.dtoToUser(userDto));
+
+    }
 
 }
