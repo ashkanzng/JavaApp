@@ -27,12 +27,12 @@ public class UserController {
     }
 
     @GetMapping("/{user_id}")
-    public Optional<User> getUserById(@PathVariable Long user_id) {
-        return userService.getUserById(user_id);
+    public Optional<User> getUserById(@PathVariable Long userId) {
+        return userService.getUserById(userId);
     }
     @GetMapping("/by/{userName}")
     public User getUserByName(@PathVariable String userName) {
-        return userService.UserByName(userName);
+        return userService.userByName(userName);
     }
 
     @PutMapping("/all")
