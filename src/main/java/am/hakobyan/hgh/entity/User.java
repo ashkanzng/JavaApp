@@ -22,10 +22,10 @@ public class User {
     private Long id;
 
     @Column(name = "username")
-    private String username;
+    private String userName;
 
     @Column(name = "email")
-    private String uesrEmail;
+    private String userEmail;
 
     @Column(name = "password")
     private String userPassword;
@@ -49,8 +49,8 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", uesrEmail='" + uesrEmail + '\'' +
+                ", userName='" + userName + '\'' +
+                ", userEmail='" + userEmail + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 ", homeAddress=" + homeAddress +
                 ", officeAddress=" + officeAddress +

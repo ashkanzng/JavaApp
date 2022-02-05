@@ -17,7 +17,7 @@ public class TaskController {
     private TaskService taskService;
 
 
-    @GetMapping("/alltasks")
+    @GetMapping(value = "/alltasks")
     public List<Task> getAllTasks() {
         System.out.println(taskService.getTasks());
         return taskService.getTasks();
