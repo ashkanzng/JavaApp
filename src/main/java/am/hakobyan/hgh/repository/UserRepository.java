@@ -14,4 +14,10 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     @Query(value = "SELECT e FROM User e WHERE e.userName = ?1")
     User findByUserName(String userName);
+
+    List<User> findByHomeAddressZip(String zipCode);
+
+    @Query(value = "SELECT u FROM User u, Task t WHERE u.id = t.user.id")
+    List<User> getUserFromTask();
+
 }

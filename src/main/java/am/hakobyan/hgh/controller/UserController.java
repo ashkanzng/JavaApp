@@ -26,7 +26,7 @@ public class UserController {
         return userService.allUsers();
     }
 
-    @GetMapping("/{user_id}")
+    @GetMapping("/{userId}")
     public Optional<User> getUserById(@PathVariable Long userId) {
         return userService.getUserById(userId);
     }
@@ -35,10 +35,18 @@ public class UserController {
         return userService.userByName(userName);
     }
 
-    @PutMapping("/all")
-    public void addNewUser(@RequestBody UserDto userDto) {
-        userService.addNewUser(userMapper.dtoToUser(userDto));
-
+//    @PutMapping("/all")
+//    public void addNewUser(@RequestBody UserDto userDto) {
+//        return userService.addNewUser(userMapper.dtoToUser(userDto));
+//
+//    }
+    @GetMapping("/zip/{zipCode}")
+    public List<User> getUserZipCode(@PathVariable String zipCode) {
+        return userService.getUserByZipCode(zipCode);
+    }
+    @GetMapping("/usertask")
+    public List<User> getUserZipCode() {
+        return userService.getUserByTask();
     }
 
 }

@@ -31,5 +31,13 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public List<User> getUserByZipCode(String zipCode) {
+        return userRepository.findByHomeAddressZip(zipCode);
+    }
+
+    public List<User> getUserByTask() {
+        return userRepository.getUserFromTask();
+    }
+
 
 }
